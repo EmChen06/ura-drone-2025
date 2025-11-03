@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/crazyflie_test/crazyflie_test.egg-info
+writing ../build/crazyflie_test/crazyflie_test.egg-info/PKG-INFO
+writing dependency_links to ../build/crazyflie_test/crazyflie_test.egg-info/dependency_links.txt
+writing entry points to ../build/crazyflie_test/crazyflie_test.egg-info/entry_points.txt
+writing requirements to ../build/crazyflie_test/crazyflie_test.egg-info/requires.txt
+writing top-level names to ../build/crazyflie_test/crazyflie_test.egg-info/top_level.txt
+writing manifest file '../build/crazyflie_test/crazyflie_test.egg-info/SOURCES.txt'
+reading manifest file '../build/crazyflie_test/crazyflie_test.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/crazyflie_test/crazyflie_test.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build
+creating /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib
+creating /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib/crazyflie_test
+copying crazyflie_test/hello_world.py -> /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib/crazyflie_test
+copying crazyflie_test/__init__.py -> /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib/crazyflie_test
+running install
+running install_lib
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test
+copying /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib/crazyflie_test/hello_world.py -> /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test
+copying /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/build/lib/crazyflie_test/__init__.py -> /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test
+byte-compiling /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test/hello_world.py to hello_world.cpython-310.pyc
+byte-compiling /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/ament_index
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/ament_index/resource_index
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/ament_index/resource_index/packages
+copying resource/crazyflie_test -> /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/ament_index/resource_index/packages
+copying package.xml -> /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/crazyflie_test
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/crazyflie_test/launch
+copying launch/launch.py -> /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/crazyflie_test/launch
+creating /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/share/crazyflie_test/config
+running install_egg_info
+Copying ../build/crazyflie_test/crazyflie_test.egg-info to /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/python3.10/site-packages/crazyflie_test-0.0.0-py3.10.egg-info
+running install_scripts
+Installing hello_world script to /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_test/lib/crazyflie_test
+writing list of installed files to '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_test/install.log'

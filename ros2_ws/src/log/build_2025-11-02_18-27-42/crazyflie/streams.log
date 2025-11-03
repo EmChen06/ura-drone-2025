@@ -1,0 +1,160 @@
+[0.179s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/uav/ura-drone-2025/ros2_ws/src/crazyswarm2/crazyflie -DCMAKE_INSTALL_PREFIX=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie
+[0.223s] -- The C compiler identification is GNU 11.4.0
+[0.270s] -- The CXX compiler identification is GNU 11.4.0
+[0.276s] -- Detecting C compiler ABI info
+[0.334s] -- Detecting C compiler ABI info - done
+[0.342s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.343s] -- Detecting C compile features
+[0.343s] -- Detecting C compile features - done
+[0.346s] -- Detecting CXX compiler ABI info
+[0.419s] -- Detecting CXX compiler ABI info - done
+[0.427s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.427s] -- Detecting CXX compile features
+[0.427s] -- Detecting CXX compile features - done
+[0.429s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.565s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.643s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.684s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.689s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.697s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.710s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.727s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.780s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.783s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.872s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.894s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.930s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.937s] -- Looking for pthread.h
+[1.003s] -- Looking for pthread.h - found
+[1.003s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.066s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.067s] -- Found Threads: TRUE  
+[1.124s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.256s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[1.258s] -- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+[1.270s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.289s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.308s] -- Found crazyflie_interfaces: 1.0.3 (/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/share/crazyflie_interfaces/cmake)
+[1.325s] -- Found motion_capture_tracking_interfaces: 1.0.6 (/opt/ros/humble/share/motion_capture_tracking_interfaces/cmake)
+[1.351s] -- Found ros_environment: 3.2.2 (/opt/ros/humble/share/ros_environment/cmake)
+[1.365s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: program_options 
+[1.370s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.425s] -- Configuring done
+[1.460s] -- Generating done
+[1.474s] -- Build files have been written to: /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie
+[1.489s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/uav/ura-drone-2025/ros2_ws/src/crazyswarm2/crazyflie -DCMAKE_INSTALL_PREFIX=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie
+[1.490s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie -- -j12 -l12
+[1.536s] [  2%] [32mBuilding CXX object CMakeFiles/teleop.dir/src/teleop.cpp.o[0m
+[1.536s] [  5%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/CrazyflieUSB.cpp.o[0m
+[1.536s] [  7%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/USBDevice.cpp.o[0m
+[1.537s] [ 12%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/Connection.cpp.o[0m
+[1.537s] [ 10%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/USBManager.cpp.o[0m
+[1.537s] [ 15%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/Crazyradio.cpp.o[0m
+[1.537s] [ 17%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/CrazyradioThread.cpp.o[0m
+[1.537s] [ 20%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/CrazyflieUSBThread.cpp.o[0m
+[1.540s] [ 22%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/crazyflie-link-cpp/CMakeFiles/crazyflieLinkCpp.dir/src/Version.cpp.o[0m
+[3.677s] [ 25%] [32m[1mLinking CXX static library libcrazyflieLinkCpp.a[0m
+[3.737s] [ 25%] Built target crazyflieLinkCpp
+[3.756s] [ 30%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/CMakeFiles/crazyflie_cpp.dir/src/Crazyflie.cpp.o[0m
+[3.757s] [ 30%] [32mBuilding CXX object deps/crazyflie_tools/crazyflie_cpp/CMakeFiles/crazyflie_cpp.dir/src/crtp.cpp.o[0m
+[5.451s] [ 32%] [32m[1mLinking CXX static library libcrazyflie_cpp.a[0m
+[5.502s] [ 32%] Built target crazyflie_cpp
+[5.523s] [ 37%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/scan.dir/src/scan.cpp.o[0m
+[5.523s] [ 37%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/listLogVariables.dir/src/listLogVariables.cpp.o[0m
+[5.523s] [ 42%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/listParams.dir/src/listParams.cpp.o[0m
+[5.524s] [ 42%] [32mBuilding CXX object CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o[0m
+[5.524s] [ 45%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/reboot.dir/src/reboot.cpp.o[0m
+[5.524s] [ 47%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/battery.dir/src/battery.cpp.o[0m
+[5.524s] [ 50%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/version.dir/src/version.cpp.o[0m
+[5.524s] [ 52%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/console.dir/src/console.cpp.o[0m
+[5.524s] [ 55%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/listMemories.dir/src/listMemories.cpp.o[0m
+[5.526s] [ 57%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/comCheck.dir/src/comCheck.cpp.o[0m
+[5.531s] [ 60%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/log.dir/src/log.cpp.o[0m
+[7.688s] [ 62%] [32m[1mLinking CXX executable scan[0m
+[7.799s] [ 65%] [32m[1mLinking CXX executable listMemories[0m
+[7.847s] [ 67%] [32m[1mLinking CXX executable version[0m
+[7.849s] [ 70%] [32m[1mLinking CXX executable listParams[0m
+[7.968s] [ 72%] [32m[1mLinking CXX executable listLogVariables[0m
+[7.999s] [ 75%] [32m[1mLinking CXX executable console[0m
+[8.107s] [ 75%] Built target scan
+[8.134s] [ 77%] [32m[1mLinking CXX executable comCheck[0m
+[8.139s] [ 80%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/downloadUSDLogfile.dir/src/downloadUSDLogfile.cpp.o[0m
+[8.180s] [ 82%] [32m[1mLinking CXX executable battery[0m
+[8.242s] [ 82%] Built target listMemories
+[8.262s] [ 82%] Built target version
+[8.275s] [ 85%] [32mBuilding CXX object deps/crazyflie_tools/CMakeFiles/setParam.dir/src/setParam.cpp.o[0m
+[8.297s] [ 85%] Built target listParams
+[8.310s] [ 87%] [32m[1mLinking CXX executable reboot[0m
+[8.397s] [ 87%] Built target console
+[8.435s] [ 87%] Built target listLogVariables
+[8.499s] [ 87%] Built target comCheck
+[8.581s] [ 87%] Built target battery
+[8.646s] [ 87%] Built target reboot
+[8.662s] [ 90%] [32m[1mLinking CXX executable log[0m
+[8.876s] [ 90%] Built target log
+[9.399s] [ 92%] [32m[1mLinking CXX executable downloadUSDLogfile[0m
+[9.568s] [ 92%] Built target downloadUSDLogfile
+[10.422s] [ 95%] [32m[1mLinking CXX executable setParam[0m
+[10.601s] [ 95%] Built target setParam
+[14.154s] [ 97%] [32m[1mLinking CXX executable teleop[0m
+[14.725s] [ 97%] Built target teleop
+[29.460s] [100%] [32m[1mLinking CXX executable crazyflie_server[0m
+[31.276s] [100%] Built target crazyflie_server
+[31.285s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie -- -j12 -l12
+[31.287s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie
+[31.293s] -- Install configuration: ""
+[31.293s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/comCheck
+[31.294s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/scan
+[31.295s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/listParams
+[31.296s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/listLogVariables
+[31.296s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/listMemories
+[31.297s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/reboot
+[31.298s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/battery
+[31.299s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/version
+[31.300s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/console
+[31.301s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/log
+[31.302s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/setParam
+[31.303s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/downloadUSDLogfile
+[31.303s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/teleop
+[31.307s] -- Set runtime path of "/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/teleop" to ""
+[31.307s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/crazyflie_server
+[31.317s] -- Set runtime path of "/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/crazyflie_server" to ""
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/crazyflie_server.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/chooser.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/vel_mux.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/cfmult.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/simple_mapper_multiranger.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/aideck_streamer.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/gui.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/lib/crazyflie/flash.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//launch
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//launch/launch.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//launch/teleop_launch.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//launch/launch_teleop2.py
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/motion_capture.yaml
+[31.317s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/config.rviz
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/aideck_streamer.yaml
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/teleop.yaml
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/crazyflies.yaml
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//config/server.yaml
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//urdf
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//urdf/cf2_assembly.stl
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//urdf/cf2_assembly_with_props.dae
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie//urdf/crazyflie_description.urdf
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/ament_index/resource_index/package_run_dependencies/crazyflie
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/ament_index/resource_index/parent_prefix_path/crazyflie
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/environment/ament_prefix_path.sh
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/environment/ament_prefix_path.dsv
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/environment/path.sh
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/environment/path.dsv
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/local_setup.bash
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/local_setup.sh
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/local_setup.zsh
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/local_setup.dsv
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/package.dsv
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/ament_index/resource_index/packages/crazyflie
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/cmake/crazyflieConfig.cmake
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/cmake/crazyflieConfig-version.cmake
+[31.318s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie/share/crazyflie/package.xml
+[31.320s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie

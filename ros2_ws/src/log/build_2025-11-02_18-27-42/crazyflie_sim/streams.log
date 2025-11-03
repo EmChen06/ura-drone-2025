@@ -1,0 +1,143 @@
+[0.179s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/uav/ura-drone-2025/ros2_ws/src/crazyswarm2/crazyflie_sim -DCMAKE_INSTALL_PREFIX=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim
+[0.224s] -- The C compiler identification is GNU 11.4.0
+[0.273s] -- The CXX compiler identification is GNU 11.4.0
+[0.278s] -- Detecting C compiler ABI info
+[0.328s] -- Detecting C compiler ABI info - done
+[0.334s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.334s] -- Detecting C compile features
+[0.334s] -- Detecting C compile features - done
+[0.336s] -- Detecting CXX compiler ABI info
+[0.399s] -- Detecting CXX compiler ABI info - done
+[0.407s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.407s] -- Detecting CXX compile features
+[0.407s] -- Detecting CXX compile features - done
+[0.410s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.553s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.685s] -- Found ament_cmake_pytest: 1.3.12 (/opt/ros/humble/share/ament_cmake_pytest/cmake)
+[1.504s] -- Configuring done
+[1.508s] -- Generating done
+[1.511s] -- Build files have been written to: /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim
+[1.514s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/uav/ura-drone-2025/ros2_ws/src/crazyswarm2/crazyflie_sim -DCMAKE_INSTALL_PREFIX=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim
+[1.516s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim -- -j12 -l12
+[1.582s] Built target ament_cmake_python_copy_crazyflie_sim
+[1.586s] Built target ament_cmake_python_copy_crazyflie_sim_setup
+[1.983s] running install_scripts
+[1.986s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.986s]   warnings.warn(
+[1.992s] running egg_info
+[1.994s] creating crazyflie_sim.egg-info
+[1.994s] writing crazyflie_sim.egg-info/PKG-INFO
+[1.994s] writing dependency_links to crazyflie_sim.egg-info/dependency_links.txt
+[1.994s] writing entry points to crazyflie_sim.egg-info/entry_points.txt
+[1.994s] writing top-level names to crazyflie_sim.egg-info/top_level.txt
+[1.995s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[1.999s] reading manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[1.999s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.005s] running egg_info
+[2.006s] writing crazyflie_sim.egg-info/PKG-INFO
+[2.007s] writing dependency_links to crazyflie_sim.egg-info/dependency_links.txt
+[2.007s] writing entry points to crazyflie_sim.egg-info/entry_points.txt
+[2.007s] writing top-level names to crazyflie_sim.egg-info/top_level.txt
+[2.009s] reading manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.009s] writing manifest file 'crazyflie_sim.egg-info/SOURCES.txt'
+[2.011s] Installing crazyflie_server script to scripts
+[2.036s] Built target ament_cmake_python_build_crazyflie_sim_egg
+[2.054s] Built target ament_cmake_python_build_crazyflie_sim_scripts
+[2.067s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim -- -j12 -l12
+[2.069s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim
+[2.077s] -- Install configuration: ""
+[2.077s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/pythonpath.sh
+[2.077s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/pythonpath.dsv
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/PKG-INFO
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/top_level.txt
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/SOURCES.txt
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/entry_points.txt
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim-1.0.3-py3.10.egg-info/dependency_links.txt
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/lib/crazyflie_sim/
+[2.078s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/lib/crazyflie_sim//crazyflie_server
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/pdf.py
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/rviz.py
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/README.md
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env
+[2.079s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/lago_disola.jpg
+[2.080s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/museumplein.jpg
+[2.080s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/studio_garden.jpg
+[2.080s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/lake_pier.jpg
+[2.080s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/abandoned_greenhouse.jpg
+[2.081s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/aviation_museum.jpg
+[2.081s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/env.jpg
+[2.081s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/machine_shop.jpg
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/crosswalk.jpg
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/peppermint_powerplant.jpg
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/derelict_overpass.jpg
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env/aerodynamics_workshop.jpg
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model/cf.mtl
+[2.082s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model/cf.obj
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/blender.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/README.md
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/record_states.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_sil.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/sim_data_types.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_server.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/pinocchio.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/np.py
+[2.083s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/none.py
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench/crazyflie2.yaml
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_G.pth
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/rho_S.pth
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_L.pth
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/phi_S.pth
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2/rho_L.pth
+[2.084s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio
+[2.085s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio/crazyflie2.urdf
+[2.085s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/dynobench.py
+[2.085s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/neuralswarm.py
+[2.085s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/__init__.py
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/__init__.py'...
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend'...
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data'...
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/dynobench'...
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/neuralswarm2'...
+[2.123s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/data/pinocchio'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/dynobench.py'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/neuralswarm.py'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/none.py'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/np.py'...
+[2.123s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/backend/pinocchio.py'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_server.py'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/crazyflie_sil.py'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/sim_data_types.py'...
+[2.124s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/blender.py'...
+[2.124s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data'...
+[2.124s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/env'...
+[2.124s] Listing '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/data/model'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/pdf.py'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/record_states.py'...
+[2.124s] Compiling '/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/local/lib/python3.10/dist-packages/crazyflie_sim/visualization/rviz.py'...
+[2.127s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/ament_index/resource_index/package_run_dependencies/crazyflie_sim
+[2.127s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/ament_index/resource_index/parent_prefix_path/crazyflie_sim
+[2.127s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/ament_prefix_path.sh
+[2.127s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/ament_prefix_path.dsv
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/path.sh
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/environment/path.dsv
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/local_setup.bash
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/local_setup.sh
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/local_setup.zsh
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/local_setup.dsv
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/package.dsv
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/ament_index/resource_index/packages/crazyflie_sim
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/cmake/crazyflie_simConfig.cmake
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/cmake/crazyflie_simConfig-version.cmake
+[2.128s] -- Installing: /home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_sim/share/crazyflie_sim/package.xml
+[2.130s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim' returned '0': AMENT_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces:/home/uav/ura-drone-2025/ros2_ws/install/crazyflie_test:/opt/ros/humble LD_LIBRARY_PATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/src/install/crazyflie_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/uav/ura-drone-2025/ros2_ws/src/build/crazyflie_sim
