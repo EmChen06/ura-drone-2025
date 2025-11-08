@@ -1,3 +1,89 @@
-ros2_ws/build/*
-ros2_ws/install/*
-ros2_ws/log/*
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+venv/
+ENV/
+env/
+.env
+.env.*
+.venv/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints
+
+# --- ROS2 / colcon / CMake ---
+# colcon & build artifacts (workspace-local)
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+# common top-level build/install/log if present
+build/
+install/
+log/
+
+# CMake and test files
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/CTestTestfile.cmake
+**/CTestCustom.cmake
+**/CTestConfiguration.ini
+**/Makefile
+**/install_manifest.txt
+**/*_symlink_install_*
+colcon_command_prefix_build.sh
+colcon_command_prefix_build.sh.env
+
+# binary / compiled artifacts
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.dylib
+
+# ROS bag files and logs
+*.bag
+*.bag.gz
+*.log
+
+# --- Packaging / dist ---
+*.egg
+*.egg-info/
+dist/
+wheelhouse/
+
+# --- Misc / secrets / local configs ---
+local_setup.*
+setup.*            # often generated in install/ -> but safe if needed, remove if you store setup.* intentionally
+*.pem
+*.key
+*.sqlite
+*.db
+
+# Optional: ignore node_modules if you ever add JS tooling
+node_modules/
+
+# You can add per-developer exceptions with:
+# !/path/to/important/checked-in-file
