@@ -53,3 +53,12 @@ cd crazyflie-clients-python
 . ../venv_clean/bin/activate
 python bin/cfclient
 
+
+----HOVER CONTROLLER------
+
+ros2 action send_goal /hover_to_point p2p_interfaces/action/HoverToPoint "{x: 0.0, y: 0, z: 10}"
+
+
+export GZ_SIM_RESOURCE_PATH="/home/$USER/crazyflie_mapping_demo/simulation_ws/crazyflie-simulation/simulator_files/gazebo/"
+ros2 launch crazyflie_ros2_multiranger_bringup simple_mapper_simulation.launch.py
+ros2 run p2p_controller hover_controller
