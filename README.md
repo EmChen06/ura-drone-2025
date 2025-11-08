@@ -10,12 +10,6 @@ https://andrew.gibiansky.com/downloads/pdf/Quadcopter%20Dynamics,%20Simulation,%
 
 https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
 
-
-. /opt/ros/jazzy/setup.bash
-. ../venv/bin/activate
-export PYTHONPATH=/home/hrml/projects/cl2-ura/crazyflie-firmware/build:$PYTHONPATH
-. install/local_setup.bash
-
 . ../venv_clean/bin/activate
 . /opt/ros/jazzy/setup.bash
 
