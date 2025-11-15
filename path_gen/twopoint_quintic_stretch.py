@@ -1,8 +1,8 @@
 import numpy as np
 import math
 
-vel_constraint = 0.5  # units per second
-acc_constraint = 1.0  # units per second squared
+vel_constraint = 0.7  # units per second
+acc_constraint = 0.2  # units per second squared
 
 points = [np.array([0.0, 0.0, 0.0]), np.array([0.5, 0.0, 0.0])]
 
@@ -10,7 +10,6 @@ initial_v = np.array([0.0, 0.0, 0.0])
 final_v = np.array([0.0, 0.0, 0.0])
 initial_a = np.array([0.0, 0.0, 0.0])
 final_a = np.array([0.0, 0.0, 0.0])
-
 
 A = np.array([[1,  0,  0,  0,  0,  0],
               [0,  1,  0,  0,  0,  0],
@@ -70,4 +69,9 @@ for i in range(11):
     pos = np.polyval(newpoly, t)
     vel = np.polyval(np.polyder(newpoly), t)
     acc = np.polyval(np.polyder(np.polyder(newpoly)), t)
-    print(f"{t:.3f}:\t{pos:.3f}\t{vel:.3f}\t{acc:.3f}")
+    d3 = np.polyval(np.polyder(np.polyder(np.polyder(newpoly))), t)
+    d4 = np.polyval(np.polyder(np.polyder(np.polyder(np.polyder(newpoly)))), t)
+    d5 = np.polyval(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(newpoly))))), t)
+    d6 = np.polyval(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(newpoly)))))), t)
+    d7 = np.polyval(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(np.polyder(newpoly))))))), t)
+    print(f"{1 / 10 / stretch_factor:.6f},{pos:.6f},{vel:.6f},{acc:.6f},{d3:.6f},{d4:.6f},{d5:.6f},{d6:.6f},{d7:.6f},0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,")
