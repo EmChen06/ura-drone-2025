@@ -72,7 +72,7 @@ def calculate_curvilinear_trajectory (arc_length, t_final, V_MAX, A_MAX):
     if t_accel < t_accel_min or t_accel > t_accel_max:
         raise ValueError(f"t_accel {t_accel} out of bounds [{t_accel_min}, {t_accel_max}]")
     t_2 = t_final - t_accel
-    v_peak = s_final * (1 / t_2)
+    v_peak = arc_length * (1 / t_2) #double check this
     a_peak = v_peak / t_accel
 
     # final formulas
@@ -80,7 +80,7 @@ def calculate_curvilinear_trajectory (arc_length, t_final, V_MAX, A_MAX):
         if t < t_accel:
             return a_peak
         elif t < t_2:
-            return np.array([0.0, 0.0, 0.0]).T
+            return 0.0
         else:
             return -a_peak
 
@@ -99,6 +99,7 @@ def calculate_curvilinear_trajectory (arc_length, t_final, V_MAX, A_MAX):
             return v_peak * (t - t_accel / 2)
         else:
             return v_peak * (t - t_accel / 2) - a_peak * (((t - t_2) ** 2) / 2)
+
     def quad_inst_rate_of_change(coeffs, t, h = 1e-6):
          return (eval_quad(coeffs, t + h) - eval_quad(coeffs, t)) / h
 
@@ -106,20 +107,30 @@ def calculate_curvilinear_trajectory (arc_length, t_final, V_MAX, A_MAX):
             return (f(t + h) - f(t)) / h
 
     def theta(t):
-        return np.arctan2(quad_inst_rate_of_change(coeffs_y, t), quad_inst_rate_of_change(eval_quad(coeffs_x, t)))
+        # compute dx/dt, dy/dt using coefficient-based finite difference
+        dx = quad_inst_rate_of_change(coeffs_x, t)
+        dy = quad_inst_rate_of_change(coeffs_y, t)
+        return np.arctan2(dy, dx)
 
     def s_vector(t):
-        return eval_quad(coeffs_x, t), eval_quad(coeffs_y, t)
+        return np.array([eval_quad(coeffs_x, t), eval_quad(coeffs_y, t)])
 
     def v_vector(t):
-        return v(t) * np.cos(theta(t)), v(t) * np.sin(theta(t))
+        th = theta(t)
+        return np.array([v(t) * np.cos(th), v(t) * np.sin(th)])
     
     def a_vector(t):
-        return a(t) * np.cos(theta(t)) - inst_rate_of_change(theta, t) * v(t)*np.sin(theta(t)),  a(t) * np.sin(theta(t)) - inst_rate_of_change(theta, t) * v(t)*np.cos(theta(t))
+        th = theta(t)
+        th_dot = inst_rate_of_change(theta, t)
+        # tangential + normal components (vector form)
+        return np.array([
+            a(t) * np.cos(th) - th_dot * v(t) * np.sin(th),
+            a(t) * np.sin(th) + th_dot * v(t) * np.cos(th)
+        ])
+
     return s_vector, v_vector, a_vector
 
 xy_points = [np.array([0.0, 0.0]), np.array([3.0, 2.0]), np.array([5, 8])]
-generate_quadratic_coeffs(xy_points)
 coeffs_x, coeffs_y, t_vals = generate_quadratic_coeffs(xy_points)
 arc_length = find_arc_length(coeffs_x, coeffs_y, t_start=t_vals[0], t_end=t_vals[-1])
 #dummy values, just want to generate correct curve and polynomials
@@ -129,12 +140,28 @@ A_MAX = 1.0  # m/s^2
 s, v, a = calculate_curvilinear_trajectory(arc_length, t_final, V_MAX, A_MAX)
 
 
-# print results in csv format
+# print results in csv format (handle 2D curve outputs safely)
 TIME_STEP = 0.1 # s
 num_steps = int(t_final / TIME_STEP) + 1
 for i in range(num_steps):
     t = i * TIME_STEP
-    vals = [TIME_STEP, s(t)[0], v(t)[0], a(t)[0], s(t)[1], v(t)[1], a(t)[1], s(t)[2], v(t)[2], a(t)[2]]
+    s_vec = s(t)
+    v_vec = v(t)
+    a_vec = a(t)
+    s_arr = np.asarray(s_vec).flatten()
+    v_arr = np.asarray(v_vec).flatten()
+    a_arr = np.asarray(a_vec).flatten()
+    max_len = max(len(s_arr), len(v_arr), len(a_arr))
+    def pad(arr, n):
+        if len(arr) >= n:
+            return arr
+        return np.concatenate([arr, np.zeros(n - len(arr))])
+    s_p = pad(s_arr, max_len)
+    v_p = pad(v_arr, max_len)
+    a_p = pad(a_arr, max_len)
+    vals = [TIME_STEP]
+    for j in range(max_len):
+        vals.extend([s_p[j], v_p[j], a_p[j]])
     print(",".join(f"{val:.6f}" for val in vals))
 
 coeffs_x, coeffs_y, t_vals = generate_quadratic_coeffs(xy_points)
