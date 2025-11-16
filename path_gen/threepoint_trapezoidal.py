@@ -3,7 +3,6 @@
 
 import numpy as np
 
-xy_points = [np.array([0.0, 0.0]), np.array([3.0, 2.0]), np.array([5, 8])]
 
 def generate_quadratic_coeffs(xy_points, times=None):
 	"""
@@ -48,17 +47,17 @@ def eval_quad(coeffs, t):
 	a, b, c = coeffs
 	return a * t**2 + b * t + c
 
-# param s_final: final position (3D vector)
-# param t_final: final time (scalar)
-# param V_MAX: maximum velocity (scalar, magnitude)
-# param A_MAX: maximum acceleration (scalar, magnitude)
-# returns: functions s(t), v(t), a(t) giving position, velocity, acceleration at time t
-def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
-    # calculate t_accel bounds
-    # these are calculated from solving |v_peak| < V_MAX (t_accel upper bound) and
-    # |a_peak| < A_MAX (t_accel lower bound) inequalities
-    # and the fact that t_accel must be less than t_final / 2
-    s_norm = np.linalg.norm(s_final)
+def find_arc_length(coeffs_x, coeffs_y, t_start = 0, t_end = 1, num_samples=100):
+    """Approximate arc length of parametric curve defined by coeffs_x, coeffs_y from t_start to t_end."""
+    t_samples = np.linspace(t_start, t_end, num_samples)
+    x_samples = eval_quad(coeffs_x, t_samples)
+    y_samples = eval_quad(coeffs_y, t_samples)
+    diffs = np.diff(np.column_stack((x_samples, y_samples)), axis=0)
+    dists = np.linalg.norm(diffs, axis=1)
+    return np.sum(dists)
+
+def calculate_curvilinear_trajectory (arc_length, t_final, V_MAX, A_MAX):
+    s_norm = arc_length
     t_accel_max = min(t_final / 2, t_final - s_norm / V_MAX)
 
     discriminant = t_final**2 - 4 * (s_norm / A_MAX)
@@ -72,8 +71,6 @@ def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
     t_accel = float(input(f"Enter t_accel in range [{t_accel_min}, {t_accel_max}]: "))
     if t_accel < t_accel_min or t_accel > t_accel_max:
         raise ValueError(f"t_accel {t_accel} out of bounds [{t_accel_min}, {t_accel_max}]")
-
-    # intermediate calculations
     t_2 = t_final - t_accel
     v_peak = s_final * (1 / t_2)
     a_peak = v_peak / t_accel
@@ -102,15 +99,35 @@ def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
             return v_peak * (t - t_accel / 2)
         else:
             return v_peak * (t - t_accel / 2) - a_peak * (((t - t_2) ** 2) / 2)
-        
-    return s, v, a
+    def quad_inst_rate_of_change(coeffs, t, h = 1e-6):
+         return (eval_quad(coeffs, t + h) - eval_quad(coeffs, t)) / h
 
-s_final = np.array([0.5, 0.0, 0.0]).T # m
-t_final = 3.0  # s
+    def inst_rate_of_change(f, t, h = 1e-6):
+            return (f(t + h) - f(t)) / h
+
+    def theta(t):
+        return np.arctan2(quad_inst_rate_of_change(coeffs_y, t), quad_inst_rate_of_change(eval_quad(coeffs_x, t)))
+
+    def s_vector(t):
+        return eval_quad(coeffs_x, t), eval_quad(coeffs_y, t)
+
+    def v_vector(t):
+        return v(t) * np.cos(theta(t)), v(t) * np.sin(theta(t))
+    
+    def a_vector(t):
+        return a(t) * np.cos(theta(t)) - inst_rate_of_change(theta, t) * v(t)*np.sin(theta(t)),  a(t) * np.sin(theta(t)) - inst_rate_of_change(theta, t) * v(t)*np.cos(theta(t))
+    return s_vector, v_vector, a_vector
+
+xy_points = [np.array([0.0, 0.0]), np.array([3.0, 2.0]), np.array([5, 8])]
+generate_quadratic_coeffs(xy_points)
+coeffs_x, coeffs_y, t_vals = generate_quadratic_coeffs(xy_points)
+arc_length = find_arc_length(coeffs_x, coeffs_y, t_start=t_vals[0], t_end=t_vals[-1])
+#dummy values, just want to generate correct curve and polynomials
+t_final = 50.0  # s
 V_MAX = 2.0  # m/s
 A_MAX = 1.0  # m/s^2
+s, v, a = calculate_curvilinear_trajectory(arc_length, t_final, V_MAX, A_MAX)
 
-s, v, a = calculate_trajectory(s_final, t_final, V_MAX, A_MAX)
 
 # print results in csv format
 TIME_STEP = 0.1 # s
