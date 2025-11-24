@@ -28,9 +28,9 @@ for i in range(NUM_POINTS + 1):
     lengths.append(dist)
     t = arcspline._s2t(dist)
     points.append(spline.evaluate(t))
-    tangents.append(np.linalg.norm(spline.evaluate(t, n=1)))
+    tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
     if i > 0 and i < NUM_POINTS:
-        tangents.append(np.linalg.norm(spline.evaluate(t, n=1)))
+        tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
 
 arcspline2 = CubicHermite(points, tangents, lengths)
 
