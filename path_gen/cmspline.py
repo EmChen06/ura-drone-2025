@@ -34,11 +34,13 @@ for i in range(NUM_POINTS + 1):
 
 arcspline2 = CubicHermite(points, tangents, lengths)
 
-s, v, a = calculate_trajectory(path_len, 5.0, 2.0, 1.0)
+PATH_TIME = 10.0
+
+s, v, a = calculate_trajectory(path_len, PATH_TIME, 1.0, 1.0)
 
 # print results in csv format
 TIME_STEP = 0.1 # s
-num_steps = int(5.0 / TIME_STEP) + 1
+num_steps = int(PATH_TIME / TIME_STEP) + 1
 for i in range(num_steps):
     t = i * TIME_STEP
     vals = [TIME_STEP] + [0] * 32
