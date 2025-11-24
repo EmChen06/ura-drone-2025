@@ -26,11 +26,24 @@ lengths = []
 for i in range(NUM_POINTS + 1):
     dist = path_len * i / NUM_POINTS
     lengths.append(dist)
+
     t = arcspline._s2t(dist)
-    points.append(spline.evaluate(t))
-    tangents.append(np.linalg.norm(spline.evaluate(t, n=1)))
-    if i > 0 and i < NUM_POINTS:
-        tangents.append(np.linalg.norm(spline.evaluate(t, n=1)))
+
+    # point on curve
+    p = spline.evaluate(t)
+    points.append(p)
+
+# Now compute tangents FOR EACH SEGMENT (two per segment)
+for i in range(NUM_POINTS):
+    t0 = arcspline._s2t(path_len * i / NUM_POINTS)
+    t1 = arcspline._s2t(path_len * (i+1) / NUM_POINTS)
+
+    v0 = spline.evaluate(t0, n=1)
+    v1 = spline.evaluate(t1, n=1)
+
+    tangents.append(v0)
+    tangents.append(v1)
+
 
 arcspline2 = CubicHermite(points, tangents, lengths)
 
