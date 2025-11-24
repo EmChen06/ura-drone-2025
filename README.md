@@ -41,3 +41,5 @@ client stuff
 cd crazyflie-clients-python
 . ../venv_clean/bin/activate
 python bin/cfclient
+
+http://homepage.divms.uiowa.edu/~kearney/pubs/CurvesAndSurfacesArcLength.pdf

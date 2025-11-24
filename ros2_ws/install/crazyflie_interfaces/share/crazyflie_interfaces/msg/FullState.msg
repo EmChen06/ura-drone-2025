@@ -1,0 +1,1 @@
+/home/uav/ura-drone-2025/ros2_ws/src/crazyswarm2/crazyflie_interfaces/msg/FullState.msg

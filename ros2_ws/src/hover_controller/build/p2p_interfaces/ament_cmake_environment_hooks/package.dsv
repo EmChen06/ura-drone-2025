@@ -1,0 +1,4 @@
+source;share/p2p_interfaces/local_setup.bash
+source;share/p2p_interfaces/local_setup.dsv
+source;share/p2p_interfaces/local_setup.sh
+source;share/p2p_interfaces/local_setup.zsh

@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from p2p_interfaces/action/HoverToPoint.action
+// generated code does not contain a copyright notice
+
+
+module p2p_interfaces {
+  module action {
+    @verbatim (language="comment", text=
+      "Request")
+    struct HoverToPoint_Goal {
+      float x;
+
+      float y;
+
+      float z;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct HoverToPoint_Result {
+      boolean success;
+
+      string message;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct HoverToPoint_Feedback {
+      float current_x;
+
+      float current_y;
+
+      float current_z;
+    };
+  };
+};

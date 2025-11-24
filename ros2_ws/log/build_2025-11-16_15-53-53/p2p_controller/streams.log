@@ -1,0 +1,24 @@
+[0.669s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller': PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/build --no-deps symlink_data
+[0.873s] running develop
+[1.011s] running egg_info
+[1.011s] creating p2p_controller.egg-info
+[1.011s] writing p2p_controller.egg-info/PKG-INFO
+[1.011s] writing dependency_links to p2p_controller.egg-info/dependency_links.txt
+[1.011s] writing entry points to p2p_controller.egg-info/entry_points.txt
+[1.011s] writing requirements to p2p_controller.egg-info/requires.txt
+[1.011s] writing top-level names to p2p_controller.egg-info/top_level.txt
+[1.011s] writing manifest file 'p2p_controller.egg-info/SOURCES.txt'
+[1.012s] reading manifest file 'p2p_controller.egg-info/SOURCES.txt'
+[1.012s] writing manifest file 'p2p_controller.egg-info/SOURCES.txt'
+[1.042s] running build_ext
+[1.042s] Creating /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages/p2p-controller.egg-link (link to .)
+[1.042s] Installing hover_controller script to /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/p2p_controller
+[1.043s] 
+[1.043s] Installed /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller
+[1.043s] running symlink_data
+[1.043s] creating /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/share/ament_index
+[1.043s] creating /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/share/ament_index/resource_index
+[1.043s] creating /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/share/ament_index/resource_index/packages
+[1.043s] symbolically linking /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/resource/p2p_controller -> /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/share/ament_index/resource_index/packages
+[1.043s] symbolically linking /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/package.xml -> /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/share/p2p_controller
+[1.076s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller' returned '0': PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/build --no-deps symlink_data

@@ -14,6 +14,9 @@ def main():
 
     traj1 = Trajectory()
     traj1.loadcsv(Path(__file__).parent / 'data/figure8.csv')
+    #print the file dircet from csv
+    print('Loaded trajectory from:', Path(__file__).parent / 'data/figure8.csv')
+
 
     # enable logging
     allcfs.setParam('usd.logging', 1)
