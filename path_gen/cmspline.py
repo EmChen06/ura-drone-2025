@@ -4,11 +4,9 @@ import numpy as np
 from twopoint_trapezoidal import calculate_trajectory
 
 waypoints = np.array([
-    [0.0, 0.0,  0.0],
-    [0.1, 0.1, -0.1],
-    [0.4, 0.1, -0.5],
-    [0.6, 0.1, -0.6],
-    [0.2, 0.1, -0.6]
+    [0.0, 0.0, 0.0],
+    [0.3, 0.0, 0.1],
+    [0.3, 0.3, 0.2]
 ])
 
 spline = CatmullRom(waypoints, alpha=0.5) # 0.5 for centripetal spline
@@ -34,7 +32,7 @@ for i in range(NUM_POINTS + 1):
 
 arcspline2 = CubicHermite(points, tangents, lengths)
 
-PATH_TIME = 10.0
+PATH_TIME = 5.0
 
 s, v, a = calculate_trajectory(path_len, PATH_TIME, 1.0, 1.0)
 
@@ -44,8 +42,19 @@ num_steps = int(PATH_TIME / TIME_STEP) + 1
 for i in range(num_steps):
     t = i * TIME_STEP
     vals = [TIME_STEP] + [0] * 32
-    for deriv in range(8):
-        for dim in range(3):
-            vals[1 + dim * 8 + deriv] = float(arcspline2.evaluate(s(t), n=deriv)[dim])
+
+    for dim in range(3):
+        value = float(arcspline2.evaluate(s(t))[dim])
+        deriv = float(arcspline2.evaluate(s(t), n=1)[dim])
+        second_deriv = float(arcspline2.evaluate(s(t), n=2)[dim])
+
+        vals[1 + dim * 8] = value # value
+        vals[1 + dim * 8 + 1] = deriv * float(v(t)) # deriv
+        vals[1 + dim * 8 + 2] = second_deriv * float(v(t)) ** 2 + deriv * float(a(t)) # second deriv
+        # set third deriv to just be 0
+
+    # for deriv in range(3):
+    #     for dim in range(3):
+    #         vals[1 + dim * 8 + deriv] = float(arcspline2.evaluate(s(t), n=deriv)[dim])
 
     print(",".join(f"{val:.6f}" for val in vals) + ",")

@@ -38,7 +38,7 @@ def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
         if t < t_accel:
             return a_peak
         elif t < t_2:
-            return np.array([0.0, 0.0, 0.0]).T
+            return 0
         else:
             return -a_peak
 
