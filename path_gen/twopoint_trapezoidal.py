@@ -60,17 +60,23 @@ def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
         
     return s, v, a
 
-s_final = np.array([0.5, 0.0, 0.0]).T # m
-t_final = 3.0  # s
-V_MAX = 2.0  # m/s
-A_MAX = 1.0  # m/s^2
 
-s, v, a = calculate_trajectory(s_final, t_final, V_MAX, A_MAX)
+if __name__ == "__main__":
+    # example usage
+    s_final = np.array([1.0, 0.5, -0.2]).T # m
+    t_final = 2.5  # s
+    V_MAX = 2.0  # m/s
+    A_MAX = 1.0  # m/s^2
 
-# print results in csv format
-TIME_STEP = 0.1 # s
-num_steps = int(t_final / TIME_STEP) + 1
-for i in range(num_steps):
-    t = i * TIME_STEP
-    vals = [TIME_STEP, s(t)[0], v(t)[0], a(t)[0], s(t)[1], v(t)[1], a(t)[1], s(t)[2], v(t)[2], a(t)[2]]
-    print(",".join(f"{val:.6f}" for val in vals))
+    s, v, a = calculate_trajectory(s_final, t_final, V_MAX, A_MAX)
+
+    # print results in csv format
+    TIME_STEP = 0.1 # s
+    num_steps = int(t_final / TIME_STEP) + 1
+    for i in range(num_steps):
+        t = i * TIME_STEP
+        vals = [TIME_STEP, s(t)[0], v(t)[0], a(t)[0], 0, 0, 0, 0, 0, \
+                s(t)[1], v(t)[1], a(t)[1], 0, 0, 0, 0, 0, \
+                s(t)[2], v(t)[2], a(t)[2], 0, 0, 0, 0, 0, \
+                0, 0, 0, 0, 0, 0, 0, 0]
+        print(",".join(f"{val:.6f}" for val in vals) + ",")
