@@ -8,5 +8,5 @@ crazyswarm2/build
 crazyswarm2/install
 crazyswarm2/log
 __pycache__/
-*.pyc
-*.png
+**.pyc
+**.png
