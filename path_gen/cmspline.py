@@ -5,6 +5,7 @@ import json
 import subprocess
 import sys
 from twopoint_trapezoidal import calculate_trajectory, t_accel_bounds
+from .tools.validate_time import validate_time
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]  # ura-drone-2025/
 CONFIG_PATH = PROJECT_ROOT / "path_gen" / "config.json"
@@ -104,8 +105,29 @@ def main():
             # set third deriv to just be 0
         line = ",".join(f"{val:.6f}" for val in vals) + ","
         lines.append(line)
+    print("Trajectory CSV generated successfully.")
+    
+    results = validate_time(str(OUTPUT_CSV), A_MAX=2.0, V_MAX=1.0)
+    if(not results["all_valid"]):
+        print("[ERROR] Trajectory validation failed. Aborting CSV replacement.")
+        return
+    else:
+        print("[INFO] Trajectory validation passed.")
+        print("Max Velocity:   {:.4f} m/s (threshold: {} m/s) - {}".format(
+            results['max_velocity'],
+            results['v_threshold'],
+            '✓' if results['velocity_valid'] else '✗'
+        ))
+        print("Max Acceleration: {:.4f} m/s² (threshold: {} m/s²) - {}".format(
+            results['max_acceleration'],
+            results['a_threshold'],
+            '✓' if results['acceleration_valid'] else '✗'
+        ))
+        print("Overall Valid: {}".format("YES" if results['all_valid'] else "NO"))
+    
+    print("\t------------------------------")
+    ans = input("\nReplace the old one? (y/n)：").strip().lower()
 
-    ans = input("Trajectory CSV generated successfully. Replace the old one? (y/n)：").strip().lower()
     if ans != "y":
         print("[INFO] new CSV dumped")
     else:
