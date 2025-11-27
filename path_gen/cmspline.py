@@ -5,7 +5,7 @@ import json
 import subprocess
 import sys
 from twopoint_trapezoidal import calculate_trajectory, t_accel_bounds
-from .tools.validate_time import validate_time
+from tools.validate_time import validate_time
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]  # ura-drone-2025/
 CONFIG_PATH = PROJECT_ROOT / "path_gen" / "config.json"
@@ -18,17 +18,14 @@ def main():
     
     cfg = json.loads(CONFIG_PATH.read_text())
 
-    waypoints = np.array(cfg["geometry"]["waypoints"], dtype=float)
-    alpha = cfg["geometry"]["catmull_rom_alpha"]
+    waypoints = np.array(cfg["path_specifications"]["waypoints"], dtype=float)
+    alpha = cfg["path_specifications"]["catmull_rom_alpha"]
+    PATH_TIME = cfg["path_specifications"]["path_time"]
+    V_MAX = cfg["path_specifications"]["v_max"]
+    A_MAX = cfg["path_specifications"]["a_max"]
 
-    PATH_TIME = cfg["timing"]["path_time"]
-    V_MAX = cfg["timing"]["v_max"]
-    A_MAX = cfg["timing"]["a_max"]
-    T_ACCEL = cfg["timing"]["t_accel"]
-
-    NUM_POINTS = cfg["discretization"]["num_points"]
-    TIME_STEP = cfg["discretization"]["time_step"]
-
+    NUM_POINTS = cfg["reparameterization"]["num_points"]
+    TIME_STEP = cfg["paths"]["time_step"]
 
     OUTPUT_CSV   = resolve_from_root(cfg["paths"]["figure8_csv"])
     FLIGHT_SCRIPT = resolve_from_root(cfg["paths"]["figure8_script"])
@@ -81,7 +78,7 @@ def main():
         tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
         if i > 0 and i < NUM_POINTS:
             tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
-# ...existing code...
+
     arcspline2 = CubicHermite(points, tangents, lengths)
 
     s, v, a = calculate_trajectory(path_len, PATH_TIME, T_ACCEL)
@@ -107,26 +104,26 @@ def main():
         lines.append(line)
     print("Trajectory CSV generated successfully.")
     
-    results = validate_time(str(OUTPUT_CSV), A_MAX=2.0, V_MAX=1.0)
+    results = validate_time(str(OUTPUT_CSV), A_MAX=A_MAX, V_MAX=V_MAX)
     if(not results["all_valid"]):
-        print("[ERROR] Trajectory validation failed. Aborting CSV replacement.")
+        print(f"[ERROR] Trajectory validation failed. Aborting CSV replacement. {results}")
         return
     else:
         print("[INFO] Trajectory validation passed.")
         print("Max Velocity:   {:.4f} m/s (threshold: {} m/s) - {}".format(
             results['max_velocity'],
             results['v_threshold'],
-            '✓' if results['velocity_valid'] else '✗'
+            'GOOD' if results['velocity_valid'] else 'BAD'
         ))
         print("Max Acceleration: {:.4f} m/s² (threshold: {} m/s²) - {}".format(
             results['max_acceleration'],
             results['a_threshold'],
-            '✓' if results['acceleration_valid'] else '✗'
+            'GOOD' if results['acceleration_valid'] else 'BAD'
         ))
         print("Overall Valid: {}".format("YES" if results['all_valid'] else "NO"))
     
     print("\t------------------------------")
-    ans = input("\nReplace the old one? (y/n)：").strip().lower()
+    ans = input("\nReplace the old one? (y/n):").strip().lower()
 
     if ans != "y":
         print("[INFO] new CSV dumped")
@@ -144,7 +141,7 @@ def main():
             f.write(",".join(HEADER) + "\n")
             for line in lines:
                 f.write(line + "\n")
-        print(f"[DONE] Trajectory CSV loaded：{OUTPUT_CSV}")
+        print(f"[DONE] Trajectory CSV loaded:{OUTPUT_CSV}")
         print("[INFO] Generating trajectory plot...")
         try:
             subprocess.run(
