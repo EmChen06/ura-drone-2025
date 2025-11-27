@@ -34,7 +34,7 @@ cd /home/hrml/projects/cl2-ura/crazyswarm2
 . install/local_setup.bash
 
 ros2 launch crazyflie launch.py mocap:=False
-ros2 run crazyflie_examples hello_world
+ros2 run crazyflie_examples figure8
 
 
 client stuff

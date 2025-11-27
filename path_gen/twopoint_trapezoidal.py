@@ -3,13 +3,12 @@
 
 import numpy as np
 
-# param s_final: final position (3D vector)
+# param s_final: final position (N-D vector or scalar)
 # param t_final: final time (scalar)
 # param V_MAX: maximum velocity (scalar, magnitude)
 # param A_MAX: maximum acceleration (scalar, magnitude)
 # returns: functions s(t), v(t), a(t) giving position, velocity, acceleration at time t
 def t_accel_bounds(s_final, t_final, V_MAX, A_MAX):
-
     # calculate t_accel bounds
     # these are calculated from solving |v_peak| < V_MAX (t_accel upper bound) and
     # |a_peak| < A_MAX (t_accel lower bound) inequalities
@@ -27,7 +26,14 @@ def t_accel_bounds(s_final, t_final, V_MAX, A_MAX):
     return t_accel_min, t_accel_max
 
 
-def calculate_trajectory(s_final, t_final, V_MAX, A_MAX, t_accel):
+def calculate_trajectory(s_final, t_final, t_accel):
+    # check if s_final is scalar
+    if np.isscalar(s_final):
+        dim = 1
+        scalar = True
+    else:
+        dim = s_final.shape[0]
+        scalar = False
 
     # intermediate calculations
     t_2 = t_final - t_accel
@@ -39,7 +45,10 @@ def calculate_trajectory(s_final, t_final, V_MAX, A_MAX, t_accel):
         if t < t_accel:
             return a_peak
         elif t < t_2:
-            return 0
+            if scalar:
+                return 0.0
+            else:
+                return np.zeros(dim)
         else:
             return -a_peak
 
@@ -69,7 +78,11 @@ if __name__ == "__main__":
     V_MAX = 2.0  # m/s
     A_MAX = 1.0  # m/s^2
 
-    s, v, a = calculate_trajectory(s_final, t_final, V_MAX, A_MAX)
+    t_accel_min, t_accel_max = t_accel_bounds(s_final, t_final, V_MAX, A_MAX)
+
+    t_accel = float(input(f"Input T_ACCEL [{t_accel_min:.4f}, {t_accel_max:.4f}]: ").strip())
+
+    s, v, a = calculate_trajectory(s_final, t_final, t_accel)
 
     # print results in csv format
     TIME_STEP = 0.1 # s
