@@ -54,15 +54,28 @@ def main():
     for i in range(NUM_POINTS + 1):
         dist = path_len * i / NUM_POINTS
         lengths.append(dist)
-        t = arcspline._s2t(dist)
+
+        # safe arc-length -> parameter mapping: prefer _s2t but fall back to clamped/proportional mapping
+        if dist <= 0.0:
+            t = 0.0
+        elif dist >= path_len:
+            t = end_t
+        else:
+            try:
+                t = arcspline._s2t(dist)
+            except ValueError:
+                # bisect sometimes fails due to floating point/bracketing issues;
+                # fall back to a simple proportional estimate of parameter t
+                t = end_t * (dist / path_len)
+
         points.append(spline.evaluate(t))
         tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
         if i > 0 and i < NUM_POINTS:
             tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
-
+# ...existing code...
     arcspline2 = CubicHermite(points, tangents, lengths)
 
-    s, v, a = calculate_trajectory(path_len, PATH_TIME, V_MAX, A_MAX, T_ACCEL)
+    s, v, a = calculate_trajectory(path_len, PATH_TIME, T_ACCEL)
 
     # print results in csv
     num_steps = int(PATH_TIME / TIME_STEP) + 1
@@ -95,6 +108,8 @@ def main():
         "z^0","z^1","z^2","z^3","z^4","z^5","z^6","z^7",
         "yaw^0","yaw^1","yaw^2","yaw^3","yaw^4","yaw^5","yaw^6","yaw^7"
     ]
+        OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
+
         with OUTPUT_CSV.open("w") as f:
             f.write(",".join(HEADER) + "\n")
             for line in lines:
