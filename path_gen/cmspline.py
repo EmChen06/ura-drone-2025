@@ -5,8 +5,9 @@ import json
 import subprocess
 import sys
 from twopoint_trapezoidal import calculate_trajectory, t_accel_bounds
-from .tools.validate_time import validate_time
-
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root))
+from tools.validate_time import validate_time
 def main():
     CONFIG_PATH = Path(__file__).parent / "config.json"
     cfg = json.loads(CONFIG_PATH.read_text())
