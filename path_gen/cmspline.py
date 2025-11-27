@@ -103,27 +103,9 @@ def main():
         line = ",".join(f"{val:.6f}" for val in vals) + ","
         lines.append(line)
     print("Trajectory CSV generated successfully.")
-    
-    results = validate_time(str(OUTPUT_CSV), A_MAX=A_MAX, V_MAX=V_MAX)
-    if(not results["all_valid"]):
-        print(f"[ERROR] Trajectory validation failed. Aborting CSV replacement. {results}")
-        return
-    else:
-        print("[INFO] Trajectory validation passed.")
-        print("Max Velocity:   {:.4f} m/s (threshold: {} m/s) - {}".format(
-            results['max_velocity'],
-            results['v_threshold'],
-            'GOOD' if results['velocity_valid'] else 'BAD'
-        ))
-        print("Max Acceleration: {:.4f} m/s² (threshold: {} m/s²) - {}".format(
-            results['max_acceleration'],
-            results['a_threshold'],
-            'GOOD' if results['acceleration_valid'] else 'BAD'
-        ))
-        print("Overall Valid: {}".format("YES" if results['all_valid'] else "NO"))
-    
+
     print("\t------------------------------")
-    ans = input("\nReplace the old one? (y/n):").strip().lower()
+    ans = input("\nOverwrite the old one? (y/n):").strip().lower()
 
     if ans != "y":
         print("[INFO] new CSV dumped")
@@ -142,22 +124,41 @@ def main():
             for line in lines:
                 f.write(line + "\n")
         print(f"[DONE] Trajectory CSV loaded:{OUTPUT_CSV}")
-        print("[INFO] Generating trajectory plot...")
-        try:
-            subprocess.run(
-                [
-                    sys.executable,
-                    str(PLOT_SCRIPT),
-                    "--csv",
-                    str(OUTPUT_CSV),
-                    "--out",
-                    str(PLOT_OUTPUT),
-                    "--show",  # auto open figure8_trajectory.png
-                ],
-                check=False,
-            )
-        except Exception as e:
-            print(f"[WARN] Failed to run plot script: {e}")
+
+    results = validate_time(str(OUTPUT_CSV), A_MAX=A_MAX, V_MAX=V_MAX)
+    if(not results["all_valid"]):
+        print(f"[ERROR] Trajectory validation failed. Aborting CSV replacement. {results}")
+        return
+    else:
+        print("[INFO] Trajectory validation passed.")
+        print("Max Velocity:   {:.4f} m/s (threshold: {} m/s) - {}".format(
+            results['max_velocity'],
+            results['v_threshold'],
+            'GOOD' if results['velocity_valid'] else 'BAD'
+        ))
+        print("Max Acceleration: {:.4f} m/s² (threshold: {} m/s²) - {}".format(
+            results['max_acceleration'],
+            results['a_threshold'],
+            'GOOD' if results['acceleration_valid'] else 'BAD'
+        ))
+        print("Overall Valid: {}".format("YES" if results['all_valid'] else "NO"))
+
+    print("[INFO] Generating trajectory plot...")
+    try:
+        subprocess.run(
+            [
+                sys.executable,
+                str(PLOT_SCRIPT),
+                "--csv",
+                str(OUTPUT_CSV),
+                "--out",
+                str(PLOT_OUTPUT),
+                "--show",  # auto open figure8_trajectory.png
+            ],
+            check=False,
+        )
+    except Exception as e:
+        print(f"[WARN] Failed to run plot script: {e}")
 
     fly = input("Launch drone now? (y/n): ").strip().lower()
     if fly == "y":
