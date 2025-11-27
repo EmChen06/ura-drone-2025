@@ -10,21 +10,20 @@ def main():
     CONFIG_PATH = Path(__file__).parent / "config.json"
     cfg = json.loads(CONFIG_PATH.read_text())
 
-    waypoints = np.array(cfg["geometry"]["waypoints"], dtype=float)
-    alpha = cfg["geometry"]["catmull_rom_alpha"]
+    waypoints = np.array(cfg["path_specifications"]["waypoints"], dtype=float)
+    alpha = cfg["path_specifications"]["catmull_rom_alpha"]
+    PATH_TIME = cfg["path_specifications"]["path_time"]
+    V_MAX = cfg["path_specifications"]["v_max"]
+    A_MAX = cfg["path_specifications"]["a_max"]
+    T_ACCEL = cfg["path_specifications"]["t_accel"]
 
-    PATH_TIME = cfg["timing"]["path_time"]
-    V_MAX = cfg["timing"]["v_max"]
-    A_MAX = cfg["timing"]["a_max"]
-    T_ACCEL = cfg["timing"]["t_accel"]
+    ARC_REPARAM_POINTS = cfg["reparameterization"]["num_points"]
 
-    NUM_POINTS = cfg["discretization"]["num_points"]
-    TIME_STEP = cfg["discretization"]["time_step"]
-
-    OUTPUT_CSV = Path(cfg["paths"]["figure8_csv"]).resolve()
-    FLIGHT_SCRIPT = Path(cfg["paths"]["figure8_script"]).resolve()
-    PLOT_SCRIPT = Path(cfg["paths"]["plot_script"]).resolve()
-    PLOT_OUTPUT = Path(cfg["paths"]["plot_output"]).resolve()
+    CSV_TIME_STEP = cfg["output"]["csv_time_step"]
+    OUTPUT_CSV = Path(cfg["output"]["figure8_csv"]).resolve()
+    FLIGHT_SCRIPT = Path(cfg["output"]["figure8_script"]).resolve()
+    PLOT_SCRIPT = Path(cfg["output"]["plot_script"]).resolve()
+    PLOT_OUTPUT = Path(cfg["output"]["plot_output"]).resolve()
 
     print("Waypoints are:")
     for i, wp in enumerate(waypoints):
@@ -51,26 +50,27 @@ def main():
         print(f"[ERROR] T_ACCEL={T_ACCEL} not within [{t_min}, {t_max}] exit")
         return
 
-    for i in range(NUM_POINTS + 1):
-        dist = path_len * i / NUM_POINTS
+    for i in range(ARC_REPARAM_POINTS + 1):
+        dist = path_len * i / ARC_REPARAM_POINTS * 0.999 # floating point error safety
         lengths.append(dist)
         t = arcspline._s2t(dist)
         points.append(spline.evaluate(t))
         tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
-        if i > 0 and i < NUM_POINTS:
+        if i > 0 and i < ARC_REPARAM_POINTS:
             tangents.append(spline.evaluate(t, n=1) / np.linalg.norm(spline.evaluate(t, n=1)))
 
     arcspline2 = CubicHermite(points, tangents, lengths)
+    path_len = float(arcspline2.grid[-1])
 
-    s, v, a = calculate_trajectory(path_len, PATH_TIME, V_MAX, A_MAX, T_ACCEL)
+    s, v, a = calculate_trajectory(path_len, PATH_TIME, T_ACCEL)
 
     # print results in csv
-    num_steps = int(PATH_TIME / TIME_STEP) + 1
+    num_steps = int(PATH_TIME / CSV_TIME_STEP) + 1
     lines = []
 
     for i in range(num_steps):
-        t = i * TIME_STEP
-        vals = [TIME_STEP] + [0] * 32
+        t = i * CSV_TIME_STEP
+        vals = [CSV_TIME_STEP] + [0] * 32
 
         for dim in range(3):
             value = float(arcspline2.evaluate(s(t))[dim])
@@ -84,7 +84,7 @@ def main():
         line = ",".join(f"{val:.6f}" for val in vals) + ","
         lines.append(line)
 
-    ans = input("Trajectory CSV generated successfully. Replace the old one? (y/n)：").strip().lower()
+    ans = input("Trajectory CSV generated successfully. Replace the old one? (y/n):").strip().lower()
     if ans != "y":
         print("[INFO] new CSV dumped")
     else:
@@ -99,7 +99,7 @@ def main():
             f.write(",".join(HEADER) + "\n")
             for line in lines:
                 f.write(line + "\n")
-        print(f"[DONE] Trajectory CSV loaded：{OUTPUT_CSV}")
+        print(f"[DONE] Trajectory CSV loaded: {OUTPUT_CSV}")
         print("[INFO] Generating trajectory plot...")
         try:
             subprocess.run(
