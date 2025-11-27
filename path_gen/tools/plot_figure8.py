@@ -16,6 +16,7 @@ Usage:
 import os
 import csv
 import argparse
+import sys
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -192,10 +193,12 @@ def main():
         main_path = os.path.join(args.out, "figure8_trajectory.png")
         if os.name == 'nt':
             # windows: start
-            subprocess.run(["start", main_path], shell=True)
+            subprocess.run(["start", "", main_path], shell=True)
         else:
-            subprocess.run(["xdg-open", main_path])
-
+            if sys.platform == "darwin":   # macOS
+                subprocess.run(["open", main_path])
+            else:           #linux
+                subprocess.run(["xdg-open", main_path])
 
 if __name__ == "__main__":
     main()

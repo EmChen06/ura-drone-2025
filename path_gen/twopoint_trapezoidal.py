@@ -8,25 +8,26 @@ import numpy as np
 # param V_MAX: maximum velocity (scalar, magnitude)
 # param A_MAX: maximum acceleration (scalar, magnitude)
 # returns: functions s(t), v(t), a(t) giving position, velocity, acceleration at time t
-def calculate_trajectory(s_final, t_final, V_MAX, A_MAX):
+def t_accel_bounds(s_final, t_final, V_MAX, A_MAX):
+
     # calculate t_accel bounds
     # these are calculated from solving |v_peak| < V_MAX (t_accel upper bound) and
     # |a_peak| < A_MAX (t_accel lower bound) inequalities
     # and the fact that t_accel must be less than t_final / 2
-    s_norm = np.linalg.norm(s_final)
+    s_norm = float(np.linalg.norm(s_final))
     t_accel_max = min(t_final / 2, t_final - s_norm / V_MAX)
 
     discriminant = t_final**2 - 4 * (s_norm / A_MAX)
     if discriminant < 0:
-        raise ValueError(f"No valid solution for the given constraints; discriminant {discriminant} < 0")
+        raise ValueError(
+            f"No valid solution for the given constraints; discriminant {discriminant} < 0"
+        )
     t_accel_min = max(0, (t_final - np.sqrt(discriminant)) / 2)
 
-    if t_accel_min > t_accel_max + 1e-6:
-        raise ValueError(f"No valid t_accel in range [{t_accel_min}, {t_accel_max}]")
+    return t_accel_min, t_accel_max
 
-    t_accel = float(input(f"Enter t_accel in range [{t_accel_min}, {t_accel_max}]: "))
-    if t_accel < t_accel_min or t_accel > t_accel_max:
-        raise ValueError(f"t_accel {t_accel} out of bounds [{t_accel_min}, {t_accel_max}]")
+
+def calculate_trajectory(s_final, t_final, V_MAX, A_MAX, t_accel):
 
     # intermediate calculations
     t_2 = t_final - t_accel

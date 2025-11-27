@@ -1,0 +1,29 @@
+{
+  "geometry": {
+    "waypoints": [
+      [0.0, 0.0, 0.0],
+      [0.3, 0.0, 0.1],
+      [0.3, 0.3, 0.2],
+      [0.6, 0.1, 0.5]
+
+    ],
+    "catmull_rom_alpha": 0.5
+  },
+  "timing": {
+    "path_time": 5.0,
+    "v_max": 1.0,
+    "a_max": 1.0,
+    "t_accel": 1.0
+  },
+  "discretization": {
+    "num_points": 100,
+    "time_step": 0.1
+  },
+  "paths": {
+    "figure8_csv": "../crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/data/figure8.csv",
+    "figure8_script": "../crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/figure8.py",
+    "plot_script": "tools/plot_figure8.py",
+    "plot_output": "outputs"
+
+  }
+}
