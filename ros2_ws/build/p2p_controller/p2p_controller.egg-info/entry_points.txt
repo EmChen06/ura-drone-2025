@@ -1,0 +1,3 @@
+[console_scripts]
+hover_controller = p2p_controller.hover_controller:main
+

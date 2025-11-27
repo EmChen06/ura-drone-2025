@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-abb2c9140d477b486938.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "p2p_interfaces__py",
+					"jsonFile" : "directory-p2p_interfaces__py-da18441da8b21f81f9c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/uav/ura-drone-2025/ros2_ws/src/hover_controller/build/p2p_interfaces/p2p_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "p2p_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_p2p_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_p2p_interfaces_egg-ebae13b200478f481cb8.json",
+					"name" : "ament_cmake_python_build_p2p_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_p2p_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_p2p_interfaces-ac28f6472d3a53b87a73.json",
+					"name" : "ament_cmake_python_copy_p2p_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces-e55fe086e323567e813a.json",
+					"name" : "p2p_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__cpp-3b97544433d318e83f39.json",
+					"name" : "p2p_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "p2p_interfaces__py::@a5909eaf710db2de3541",
+					"jsonFile" : "target-p2p_interfaces__py-e61e930a798305a7f040.json",
+					"name" : "p2p_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_generator_c-d0789c0abb7378219811.json",
+					"name" : "p2p_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_generator_py-3f860ad002f5567b7ada.json",
+					"name" : "p2p_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_c-7f80cd6770153f1091c2.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_c__pyext-6d4905b1e03c7b58f904.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_cpp-04f49fa769f05f7796d3.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_fastrtps_c-84161fc69cf4c81e2893.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_fastrtps_c__pyext-029d8eb15dc811d4b97a.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_fastrtps_cpp-b2b23bdd9139a198cc72.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_introspection_c-dcc69d0d438077553e76.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_introspection_c__pyext-28c1608e0a08a62f0778.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces__rosidl_typesupport_introspection_cpp-12847d10a7046f898dd8.json",
+					"name" : "p2p_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "p2p_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p2p_interfaces_uninstall-05faa433c70f69ea1552.json",
+					"name" : "p2p_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-4b8baa8d3617103dddb4.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/uav/ura-drone-2025/ros2_ws/src/hover_controller/build/p2p_interfaces",
+		"source" : "/home/uav/ura-drone-2025/ros2_ws/src/hover_controller/p2p_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

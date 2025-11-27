@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "p2p_interfaces__py",
+		"source" : "/home/uav/ura-drone-2025/ros2_ws/src/hover_controller/build/p2p_interfaces/p2p_interfaces__py"
+	}
+}

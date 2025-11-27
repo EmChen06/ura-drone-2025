@@ -1,0 +1,6 @@
+{
+  "package_name": "p2p_interfaces",
+  "non_idl_tuples": [
+    "/home/uav/ura-drone-2025/ros2_ws/src/hover_controller/p2p_interfaces:action/HoverToPoint.action"
+  ]
+}

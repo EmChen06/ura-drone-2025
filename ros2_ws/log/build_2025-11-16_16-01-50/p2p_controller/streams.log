@@ -1,0 +1,17 @@
+[0.691s] Invoking command in '/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller': PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/build --no-deps symlink_data
+[0.957s] running develop
+[1.099s] running egg_info
+[1.099s] writing p2p_controller.egg-info/PKG-INFO
+[1.099s] writing dependency_links to p2p_controller.egg-info/dependency_links.txt
+[1.099s] writing entry points to p2p_controller.egg-info/entry_points.txt
+[1.099s] writing requirements to p2p_controller.egg-info/requires.txt
+[1.099s] writing top-level names to p2p_controller.egg-info/top_level.txt
+[1.100s] reading manifest file 'p2p_controller.egg-info/SOURCES.txt'
+[1.101s] writing manifest file 'p2p_controller.egg-info/SOURCES.txt'
+[1.132s] running build_ext
+[1.133s] Creating /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages/p2p-controller.egg-link (link to .)
+[1.133s] Installing hover_controller script to /home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/p2p_controller
+[1.133s] 
+[1.133s] Installed /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller
+[1.133s] running symlink_data
+[1.174s] Invoked command in '/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller' returned '0': PYTHONPATH=/home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/uav/ura-drone-2025/ros2_ws/install/p2p_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/uav/ura-drone-2025/ros2_ws/build/p2p_controller/build --no-deps symlink_data

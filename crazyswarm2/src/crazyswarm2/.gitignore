@@ -1,0 +1,7 @@
+.DS_Store
+crazyswarm2_sim_webots/
+*.pyc
+*.o
+*~
+.csv
+.png
