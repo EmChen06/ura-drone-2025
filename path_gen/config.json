@@ -20,10 +20,10 @@
     "time_step": 0.1
   },
   "paths": {
-    "figure8_csv": "../crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/data/figure8.csv",
-    "figure8_script": "../crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/figure8.py",
-    "plot_script": "tools/plot_figure8.py",
-    "plot_output": "outputs"
+    "figure8_csv": "crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/data/figure8.csv",
+    "figure8_script": "crazyswarm2/src/crazyswarm2/crazyflie_examples/crazyflie_examples/figure8.py",
+    "plot_script": "path_gen/tools/plot_figure8.py",
+    "plot_output": "path_gen/outputs"
 
   }
 }

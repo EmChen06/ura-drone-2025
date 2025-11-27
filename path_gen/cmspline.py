@@ -6,8 +6,15 @@ import subprocess
 import sys
 from twopoint_trapezoidal import calculate_trajectory, t_accel_bounds
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]  # ura-drone-2025/
+CONFIG_PATH = PROJECT_ROOT / "path_gen" / "config.json"
+
+def resolve_from_root(relative_path: str) -> Path:
+    """Resolve paths in config relative to project root."""
+    return (PROJECT_ROOT / relative_path).expanduser().resolve()
+
 def main():
-    CONFIG_PATH = Path(__file__).parent / "config.json"
+    
     cfg = json.loads(CONFIG_PATH.read_text())
 
     waypoints = np.array(cfg["geometry"]["waypoints"], dtype=float)
@@ -21,10 +28,11 @@ def main():
     NUM_POINTS = cfg["discretization"]["num_points"]
     TIME_STEP = cfg["discretization"]["time_step"]
 
-    OUTPUT_CSV = Path(cfg["paths"]["figure8_csv"]).resolve()
-    FLIGHT_SCRIPT = Path(cfg["paths"]["figure8_script"]).resolve()
-    PLOT_SCRIPT = Path(cfg["paths"]["plot_script"]).resolve()
-    PLOT_OUTPUT = Path(cfg["paths"]["plot_output"]).resolve()
+
+    OUTPUT_CSV   = resolve_from_root(cfg["paths"]["figure8_csv"])
+    FLIGHT_SCRIPT = resolve_from_root(cfg["paths"]["figure8_script"])
+    PLOT_SCRIPT  = resolve_from_root(cfg["paths"]["plot_script"])
+    PLOT_OUTPUT  = resolve_from_root(cfg["paths"]["plot_output"])
 
     print("Waypoints are:")
     for i, wp in enumerate(waypoints):
