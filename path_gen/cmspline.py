@@ -95,11 +95,16 @@ def main():
             value = float(arcspline2.evaluate(s(t))[dim])
             deriv = float(arcspline2.evaluate(s(t), n=1)[dim])
             second_deriv = float(arcspline2.evaluate(s(t), n=2)[dim])
+            third_deriv = float(arcspline2.evaluate(s(t), n=3)[dim])
 
             vals[1 + dim * 8] = value # value
             vals[1 + dim * 8 + 1] = deriv * float(v(t)) # deriv
             vals[1 + dim * 8 + 2] = second_deriv * float(v(t)) ** 2 + deriv * float(a(t)) # second deriv
-            # set third deriv to just be 0
+            vals[1 + dim * 8 + 3] = third_deriv * float(v(t)) ** 3 + 3 * second_deriv * float(v(t)) * float(a(t))
+            vals[1 + dim * 8 + 4] = 6 * third_deriv * float(v(t))**2 * float(a(t)) + 3 * second_deriv * float(a(t))**2
+            # TODO
+            # higher derivatives can be approximated as the difference of previous derivatives * TIME_STEP
+            
         line = ",".join(f"{val:.6f}" for val in vals) + ","
         lines.append(line)
     print("Trajectory CSV generated successfully.")
